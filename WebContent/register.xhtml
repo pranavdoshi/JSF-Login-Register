@@ -4,7 +4,8 @@
 		xmlns:c="http://java.sun.com/jsf/core"
 		xmlns:ui="http://java.sun.com/jsf/facelets"
 		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+		xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+		xmlns:f = "http://java.sun.com/jsf/core">
 	<h:head>
 		  <title>Login Page</title>		  	 
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -33,29 +34,34 @@
               <div class="form-group">
 				<h:outputLabel for="firstName" class="col-sm-3 control-label">First Name</h:outputLabel>					      
                   <div class="col-sm-9">
-                      <h:inputText id="firstName" placeholder="First Name" class="form-control" required="true"  value="#{reg.fname}" requiredMessage="First Name field must not be empty"/>
-                  	  <h:message for="input-Name" style="color:red;display:block" />	
+                      <h:inputText id="firstName" placeholder="First Name" class="form-control" required="true"  value="#{reg.fname}" requiredMessage="First Name field must not be empty and contains only letters">
+                 
+                  	  </h:inputText>
+                  	  <h:message for="firstName" style="color:red;display:block" />	
                   </div>
               </div>
               <div class="form-group">
 				<h:outputLabel for="lastName" class="col-sm-3 control-label">Last Name</h:outputLabel>					      
                   <div class="col-sm-9">
                       <h:inputText id="lastName" placeholder="Last Name" class="form-control" required="true" value="#{reg.lname}" requiredMessage="Last Name field must not be empty"/>
-                  	  <h:message for="input-Name" style="color:red;display:block" /> 
+                  	  <h:message for="lastName" style="color:red;display:block" /> 
                   </div>
               </div>
               <div class="form-group">
               <h:outputLabel for="email" class="col-sm-3 control-label">Email</h:outputLabel>
                   <div class="col-sm-9">    
-                  <h:inputText id="email" placeholder="Email" class="form-control" required="true" value="#{reg.email}" requiredMessage="Email must not be empty"/>
+                  <h:inputText id="email" placeholder="Email" class="form-control" required="true" value="#{reg.email}" requiredMessage="Email invalid">
+                 
+                  	</h:inputText>
                   <h:message for="email" style="color:red;display:block" />
                   </div>
               </div>
               <div class="form-group">
                <h:outputLabel for="password" class="col-sm-3 control-label">Password</h:outputLabel>
                   <div class="col-sm-9">
-                  	  <h:inputSecret id="password" placeholder="Password" minlength ="6" maxlength="10" class="form-control" value="#{reg.password}" required="true" requiredMessage="Email must not be empty"/>/>
-                      <h:message for="email" style="color:red;display:block" />
+                  	  <h:inputSecret id="password" placeholder="Password" minlength ="6" maxlength="10" class="form-control" value="#{reg.password}" required="true" requiredMessage="Email must not be empty">
+                      </h:inputSecret>	
+                      <h:message for="password" style="color:red;display:block" />
                   </div>
               </div>
               <div class="form-group">
@@ -70,7 +76,7 @@
               </div>
               <div class="form-group">
                   <div class="col-sm-9 col-sm-offset-3">
-                       <h:commandButton class="btn btn-primary btn-block" value="Register" action = "#{reg.regValidate}" style="cursor:pointer"></h:commandButton>
+                       <h:commandButton class="btn btn-primary btn-block" value="Register" action = "#{reg.registerValidate}" style="cursor:pointer"></h:commandButton>
                   </div>
               </div>
           </h:form> <!-- Form ends -->

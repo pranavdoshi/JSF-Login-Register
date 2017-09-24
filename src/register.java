@@ -82,9 +82,9 @@ public class register {
 
 
 
-	public void registerValidate()
+	public String registerValidate()
 	{
-		System.out.println("hello");
+		return "registered";
 	}
 	
 }
