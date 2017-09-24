@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15060909415510" configfile="/SEassignment/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" comment="login user" x="122" y="370" id="pf15061040415211" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15061040415222 pf15061040415223" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="successAttempt.xhtml" x="338" y="178" id="pf15061040415224" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15061040415222" path="/successAttempt.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="failureAttempt.xhtml" x="338" y="562" id="pf15061040415225" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15061040415223" path="/failureAttempt.xhtml"/>
+  <links id="pf15061040415222" target="pf15061040415224" source="pf15061040415211" outcome="output" fromaction="#{obj.login}"/>
+  <links id="pf15061040415223" target="pf15061040415225" source="pf15061040415211" outcome="invalid" fromaction="#{obj.login}"/>
+</pageflow:Pageflow>
