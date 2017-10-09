@@ -34,23 +34,23 @@
               <div class="form-group">
 				<h:outputLabel for="firstName" class="col-sm-3 control-label">First Name</h:outputLabel>					      
                   <div class="col-sm-9">
-                      <h:inputText id="firstName" placeholder="First Name" class="form-control" required="true"  value="#{reg.fname}" requiredMessage="First Name field must not be empty and contains only letters">
+                      <h:inputText id="firstName" placeholder="Name" class="form-control" required="true"  value="#{user.name}" requiredMessage=" Name field must not be empty and contains only letters">
                  
                   	  </h:inputText>
                   	  <h:message for="firstName" style="color:red;display:block" />	
                   </div>
               </div>
               <div class="form-group">
-				<h:outputLabel for="lastName" class="col-sm-3 control-label">Last Name</h:outputLabel>					      
+				<h:outputLabel for="username" class="col-sm-3 control-label">Username</h:outputLabel>					      
                   <div class="col-sm-9">
-                      <h:inputText id="lastName" placeholder="Last Name" class="form-control" required="true" value="#{reg.lname}" requiredMessage="Last Name field must not be empty"/>
-                  	  <h:message for="lastName" style="color:red;display:block" /> 
+                      <h:inputText id="username" placeholder="Username" class="form-control" required="true" value="#{user.userid}" requiredMessage="Username field must not be empty"/>
+                  	  <h:message for="username" style="color:red;display:block" /> 
                   </div>
               </div>
               <div class="form-group">
               <h:outputLabel for="email" class="col-sm-3 control-label">Email</h:outputLabel>
                   <div class="col-sm-9">    
-                  <h:inputText id="email" placeholder="Email" class="form-control" required="true" value="#{reg.email}" requiredMessage="Email invalid">
+                  <h:inputText id="email" placeholder="Email" class="form-control" required="true" value="#{user.email}" requiredMessage="Email invalid">
                  
                   	</h:inputText>
                   <h:message for="email" style="color:red;display:block" />
@@ -59,24 +59,15 @@
               <div class="form-group">
                <h:outputLabel for="password" class="col-sm-3 control-label">Password</h:outputLabel>
                   <div class="col-sm-9">
-                  	  <h:inputSecret id="password" placeholder="Password" minlength ="6" maxlength="10" class="form-control" value="#{reg.password}" required="true" requiredMessage="Email must not be empty">
+                  	  <h:inputSecret id="password" placeholder="Password" minlength ="6" maxlength="10" class="form-control" value="#{user.password}" required="true" requiredMessage="Email must not be empty">
                       </h:inputSecret>	
                       <h:message for="password" style="color:red;display:block" />
                   </div>
               </div>
-              <div class="form-group">
-                  <h:outputLabel for="contactno" class="col-sm-3 control-label">Contact Number</h:outputLabel>
-                  <div class="col-sm-9">
-                      <h:inputText id="contactno" placeholder="Password" class="form-control" maxlength = "10" required="true" value="#{reg.contactno}" requiredMessage="Contact Number is required">
-                      	
-                      </h:inputText>
-                      <h:message for="contactno" style="color:red;display:block" />
-                      
-                  </div>
-              </div>
+              
               <div class="form-group">
                   <div class="col-sm-9 col-sm-offset-3">
-                       <h:commandButton class="btn btn-primary btn-block" value="Register" action = "#{reg.registerValidate}" style="cursor:pointer"></h:commandButton>
+                       <h:commandButton class="btn btn-primary btn-block" value="Register" action = "#{user.register}" style="cursor:pointer"></h:commandButton>
                   </div>
               </div>
           </h:form> <!-- Form ends -->
